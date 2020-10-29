@@ -10,6 +10,9 @@
     "build": "webpack --config=./webpack.config.dev.js",
     "start": "webpack-dev-server --config=./webpack.config.dev.js"
   },
+  "keywords": [
+    "localStorage"
+  ],
   "dependencies": {
     "web-storage-cache": "^1.1.1"
   },

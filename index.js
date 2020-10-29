@@ -58,7 +58,7 @@ class Frequency{
       var dateTime = new Date().getTime() + 1000 * 3600 * 24 * day;
       expTime = new Date(dateTime) ;
     }
-    wsCache.set(name, { value, expTime ,frequency, nowFrequency: 0 }, { exp: expTime })
+    wsCache.set(name, { value, expTime ,frequency, nowFrequency: 1 }, { exp: expTime })
   }
 }
 
