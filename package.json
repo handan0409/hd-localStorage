@@ -1,6 +1,6 @@
 {
   "name": "hd-localstorage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "支持设置访问频率的本地存储",
   "main": "index.js",
   "repository": "https://github.com/handan0409/hd-localStorage.git",

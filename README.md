@@ -1,14 +1,14 @@
 # localStorage带有使用频率限制的本地存储
 ```
-1、依赖web
-2、只针对业务中经常使用的场景，代码简单，代码量少
-3、规避中文cookie导致的服务器不兼容问题
+1、存储的数据，带有获取次数记录。超出获取次数，则返回null。常用语运营位展示 n天n次 的业务需求。
+2、存储格式支持对象，数组，字符串，number等类型
+3、只针对业务中经常使用的场景，代码简单，代码量少
 ```
 ## 使用过程
 
-npm install --save hd-cookie 或 yarn add hd-cookie 
+npm install --save hd-localstorage 或 yarn add hd-localstorage
 ```js
-import Frequency from "hd-cookie" ;
+import Frequency from "hd-localstorage" ;
 ```
 
 ## 使用方法介绍
@@ -42,6 +42,6 @@ frequency.set('name', '张三',{ day: 1, frequency: 1 }) //设置一天内只允
 参数1：name => 存储的key值
 注：如果没有存储过，或者存储过期，或者存储数据查询超限制次数，则返回null，否则返回value值
 ```js
-newCookie.getCookie("name") ;
+frequency.get("name") ;
 ```
 
