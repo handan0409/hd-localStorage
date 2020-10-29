@@ -1,0 +1,22 @@
+{
+  "name": "hd-localStorage",
+  "version": "1.0.0",
+  "description": "支持设置访问频率的本地存储",
+  "main": "index.js",
+  "repository": "https://github.com/handan0409/hd-localStorage.git",
+  "author": "handan",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config=./webpack.config.dev.js",
+    "start": "webpack-dev-server --config=./webpack.config.dev.js"
+  },
+  "dependencies": {
+    "web-storage-cache": "^1.1.1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

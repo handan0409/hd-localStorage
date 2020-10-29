@@ -1,0 +1,13 @@
+.git
+.vscode
+
+/node_modules
+
+yarn.lock
+yarn-error.log
+
+// 测试
+
+/test
+/public
+/dist
