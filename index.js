@@ -28,16 +28,23 @@ class Frequency{
    */
   get(name){
     let cacheData = wsCache.get(name) ;
-    if(!(cacheData instanceof Object)) return null ;
+    if(!(cacheData instanceof Object)) return null ; // 超时或者没有存储过
 
     let { value, expTime, frequency, nowFrequency } = cacheData || {} ;
+    let isSafety = false ; // 获取次数是否在安全值范围内
     if(nowFrequency < frequency){
-      nowFrequency++ ;
-      wsCache.set(name, { value, expTime, frequency, nowFrequency }, { exp: expTime })
-      return value ;
+      isSafety = true ;
     }else{
-      return null ;
+      isSafety = false ;
     }
+    nowFrequency++ ;
+    wsCache.set(name, { value, expTime, frequency, nowFrequency }, { exp: expTime })
+    return {
+      value,
+      isSafety,
+      nowNumber: nowFrequency,
+      maxNumber: frequency,
+    } ;
   }
 
   /**
@@ -58,7 +65,7 @@ class Frequency{
       var dateTime = new Date().getTime() + 1000 * 3600 * 24 * day;
       expTime = new Date(dateTime) ;
     }
-    wsCache.set(name, { value, expTime ,frequency, nowFrequency: 1 }, { exp: expTime })
+    wsCache.set(name, { value, expTime ,frequency, nowFrequency: 0 }, { exp: expTime })
   }
 }
 

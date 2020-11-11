@@ -1,6 +1,6 @@
 # localStorage带有使用频率限制的本地存储
 ```
-1、存储的数据，带有获取次数记录。超出获取次数，则返回null。常用语运营位展示 n天n次 的业务需求。
+1、存储的数据，带有获取次数记录。常用语运营位展示 n天n次 的业务需求。
 2、存储格式支持对象，数组，字符串，number等类型
 3、只针对业务中经常使用的场景，代码简单，代码量少
 ```
@@ -40,8 +40,17 @@ frequency.set('name', '张三',{ day: 1, frequency: 1 }) //设置一天内只允
 ### 2、对get()的获取操作
 方法：get(name)<br />
 参数1：name => 存储的key值
-注：如果没有存储过，或者存储过期，或者存储数据查询超限制次数，则返回null，否则返回value值
 ```js
 frequency.get("name") ;
+```
+返回值：object || null <br />
+注：如果没有存储过，或者存储过期，则返回 null，存储值存在并且在有效期范围内，则返回对象
+```js
+{
+      value: "张三" ,   // 存储的value值
+      isSafety: true ,  // 当前获取次数是否在安全值范围内
+      nowNumber: nowFrequency, // 当前获取次数值
+      maxNumber: frequency, // 设置的获取次数限制
+}
 ```
 
