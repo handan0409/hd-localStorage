@@ -16,6 +16,7 @@ class Frequency{
     this.defaults = {
       day: Infinity,
       frequency: Infinity,
+      nowFrequency: 0,
     }
 
     this.config = Object.assign(this.defaults, params) ;
@@ -54,7 +55,7 @@ class Frequency{
    * @param {object} options 访问频率配置，{ day: 几天, frequency: 几次, nowFrequency: 当前获取次数 }, day默认值Infinity，无限多天；frequency默认值Infinity，无限多次
    */
   set(name, value = name, options){
-    let { day = this.config.day, frequency = this.config.frequency, nowFrequency = 0 } = options || {} ;
+    let { day = this.config.day, frequency = this.config.frequency, nowFrequency = this.config.nowFrequency } = options || {} ;
     if(typeof day !== "number" || typeof frequency !== "number"){
       return false ;
     }
