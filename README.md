@@ -49,8 +49,8 @@ frequency.get("name") ;
 {
       value: "张三" ,   // 存储的value值
       isSafety: true ,  // 当前获取次数是否在安全值范围内
-      nowNumber: nowFrequency, // 当前获取次数值
-      maxNumber: frequency, // 设置的获取次数限制
+      nowNumber: 1, // 当前获取次数值
+      maxNumber: 3, // 设置的获取次数限制
 }
 ```
 
