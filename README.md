@@ -31,10 +31,11 @@ let frequency = new Frequency({
 参数3: options{ day: 几天, frequency: 几次 } => <br />
       day: 单位，天，支持浮点数 <br />
       frequency: 单位，次，不支持浮点数 <br />
+      nowFrequency: 单位，次，不支持浮点数。当前获取次数，不填，默认为0 <br />
 ```js
 frequency.set('name') 
 frequency.set('name', '张三') 
-frequency.set('name', '张三',{ day: 1, frequency: 1 }) //设置一天内只允许获取一次
+frequency.set('name', '张三',{ day: 1, frequency: 1, nowFrequency: 1 }) //设置一天内只允许获取一次, 并且当前获取次数为1
 ```
 
 ### 2、对get()的获取操作

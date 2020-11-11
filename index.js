@@ -51,10 +51,10 @@ class Frequency{
    * 
    * @param {string} name 存储key值
    * @param {any} value 存储的value值，默认value值 = name值
-   * @param {object} options 访问频率配置，{ day: 几天, frequency: 几次 }, day默认值Infinity，无限多天；frequency默认值Infinity，无限多次
+   * @param {object} options 访问频率配置，{ day: 几天, frequency: 几次, nowFrequency: 当前获取次数 }, day默认值Infinity，无限多天；frequency默认值Infinity，无限多次
    */
   set(name, value = name, options){
-    let { day = this.config.day, frequency = this.config.frequency } = options || {} ;
+    let { day = this.config.day, frequency = this.config.frequency, nowFrequency = 0 } = options || {} ;
     if(typeof day !== "number" || typeof frequency !== "number"){
       return false ;
     }
@@ -65,7 +65,7 @@ class Frequency{
       var dateTime = new Date().getTime() + 1000 * 3600 * 24 * day;
       expTime = new Date(dateTime) ;
     }
-    wsCache.set(name, { value, expTime ,frequency, nowFrequency: 0 }, { exp: expTime })
+    wsCache.set(name, { value, expTime ,frequency: Math.floor(frequency), nowFrequency: Math.floor(nowFrequency) }, { exp: expTime })
   }
 }
 

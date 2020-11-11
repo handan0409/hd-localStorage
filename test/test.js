@@ -7,5 +7,5 @@ let frequency = new Frequency({
 })
 
 // console.log(frequency.set("zhangsan","qwe",{day: 2, frequency: 4}))
-// frequency.set("zhangsan","qwe",{day: 2, frequency: 4})
+// frequency.set("zhangsan","qwe",{day: 2, frequency: 4, nowFrequency: 3})
 console.log(frequency.get("zhangsan"))
