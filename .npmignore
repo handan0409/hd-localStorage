@@ -1,13 +1,34 @@
-.git
-.vscode
+# git origin
+/.git/
+/.vscode/
 
-/node_modules
+# object file ignore
+/config/
+/node_modules/
+/docs/
+/public/
+/scripts/
+/src/
+/dist/
 
+# on test functions not want to republic
+# /lib/Immutable.js
+
+# config file
+.gitignore
+.npmignore
+.babelrc
+tslint.json
+tsconfig.json
 yarn.lock
-yarn-error.log
+*.log
 
-// 测试
 
-/test
-/public
-/dist
+# home test
+test.js
+
+# html
+index.html
+
+# development
+webpack.config.dev.js

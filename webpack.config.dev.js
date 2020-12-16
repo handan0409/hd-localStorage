@@ -15,26 +15,23 @@ module.exports = {
     compress: true,
     port: 9000,
   },
-  // module: {
-  //   rules: [
-  //     {   //解析js和jsx的loader
-  //       test: /\.(js|jsx)$/,
-  //       exclude: /(node_modules|bower_components)/,
-  //       use: {
-  //         loader: 'babel-loader',   //使用babel解析一下
-  //         options: {
-  //           presets: ['env']
-  //         }
-  //       }
-  //     },
-  //   ]
-  // }
+  module: {
+    rules: [
+      {   //解析js和jsx的loader
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+        }
+      },
+    ]
+  },
 
-    //插件，如，可以打包html的插件
-    plugins: [
-      new htmlPlugin({
-        template: path.resolve(__dirname, './public/test.html'),
-        filename: 'app.html',
-      }),
-    ],
+  //插件，如，可以打包html的插件
+  plugins: [
+    new htmlPlugin({
+      template: path.resolve(__dirname, './public/test.html'),
+      filename: 'app.html',
+    }),
+  ],
 }
