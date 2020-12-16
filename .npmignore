@@ -10,6 +10,7 @@
 /scripts/
 /src/
 /dist/
+/test/
 
 # on test functions not want to republic
 # /lib/Immutable.js
